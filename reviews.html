@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+<style>
+  /* Preview-only page chrome; not part of the Squarespace embed */
+  body { margin: 0; padding: 0 16px; background: #f5f5f5; }
+</style>
+<style>
+  /*
+    Everything is scoped under .tpda-reviews so this can be dropped into
+    a Squarespace Code Block without leaking styles onto the rest of the
+    site (Code Block markup renders directly in the page, not an iframe).
+  */
+  .tpda-reviews,
+  .tpda-reviews * {
+    box-sizing: border-box;
+  }
+
+  .tpda-reviews {
+    --tpda-star-color: #f5b301;
+    --tpda-star-size: 32px;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    padding: 24px 0;
+  }
+
+  .tpda-reviews .reviews-grid {
+    max-width: 1243px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .tpda-reviews .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    padding: 24px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .tpda-reviews .review-card__stars {
+    display: flex;
+    gap: 4px;
+  }
+
+  .tpda-reviews .review-card__stars svg {
+    width: var(--tpda-star-size);
+    height: var(--tpda-star-size);
+    fill: var(--tpda-star-color);
+    flex-shrink: 0;
+  }
+
+  .tpda-reviews .review-card__text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    /* Push the attribution to the bottom so names line up across cards */
+    flex-grow: 1;
+  }
+
+  .tpda-reviews .review-card__author {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  /* ---------- Tablet: 2 columns ---------- */
+  @media (max-width: 1000px) {
+    .tpda-reviews .reviews-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* ---------- Mobile: 1 column ---------- */
+  @media (max-width: 600px) {
+    .tpda-reviews .reviews-grid {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 640px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="tpda-reviews">
+
+  <!--
+    Star shape, defined once and reused by every card.
+    32x32 five-point star with an 8px corner radius on each corner.
+  -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="tpda-star" viewBox="0 0 32 32">
+      <path d="M13.88 6.62A2.29 2.29 0 0 1 18.12 6.62L18.36 7.19A8 8 0 0 0 25.1 12.09L25.72 12.14A2.29 2.29 0 0 1 27.03 16.17L26.56 16.57A8 8 0 0 0 23.98 24.51L24.13 25.11A2.29 2.29 0 0 1 20.7 27.6L20.17 27.27A8 8 0 0 0 11.83 27.27L11.3 27.6A2.29 2.29 0 0 1 7.87 25.11L8.02 24.51A8 8 0 0 0 5.44 16.57L4.97 16.17A2.29 2.29 0 0 1 6.28 12.14L6.9 12.09A8 8 0 0 0 13.64 7.19Z"/>
+    </symbol>
+  </svg>
+
+  <ul class="reviews-grid">
+
+    <li class="review-card">
+      <div class="review-card__stars" role="img" aria-label="5 out of 5 stars">
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+      </div>
+      <p class="review-card__text">Review text goes here.</p>
+      <p class="review-card__author">Reviewer Name</p>
+    </li>
+
+    <li class="review-card">
+      <div class="review-card__stars" role="img" aria-label="5 out of 5 stars">
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+      </div>
+      <p class="review-card__text">Review text goes here.</p>
+      <p class="review-card__author">Reviewer Name</p>
+    </li>
+
+    <li class="review-card">
+      <div class="review-card__stars" role="img" aria-label="5 out of 5 stars">
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+      </div>
+      <p class="review-card__text">Review text goes here.</p>
+      <p class="review-card__author">Reviewer Name</p>
+    </li>
+
+    <li class="review-card">
+      <div class="review-card__stars" role="img" aria-label="5 out of 5 stars">
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+        <svg aria-hidden="true"><use href="#tpda-star"/></svg>
+      </div>
+      <p class="review-card__text">Review text goes here.</p>
+      <p class="review-card__author">Reviewer Name</p>
+    </li>
+
+  </ul>
+</div>
+</body>
+</html>
