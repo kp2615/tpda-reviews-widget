@@ -61,6 +61,7 @@
     margin: 0;
     font-size: calc(0.9rem - 2px);
     font-weight: 700;
+    letter-spacing: 0.02em;
   }
 
   /* ---------- Tablet: 2 columns ---------- */
@@ -70,11 +71,32 @@
     }
   }
 
-  /* ---------- Mobile: 1 column ---------- */
+  /*
+    ---------- Mobile: one swipeable row ----------
+    Cards keep their desktop width (296px, a quarter of the 1243px row) and
+    the row breaks out of the page gutters to bleed off both screen edges.
+    The matching padding keeps the first card aligned with the page content.
+    Cards snap to centre; the first and last can't reach centre, so they
+    settle at the page edges instead.
+  */
   @media (max-width: 600px) {
     .tpda-reviews .reviews-grid {
-      grid-template-columns: minmax(0, 1fr);
-      max-width: 640px;
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 296px;
+      gap: 16px;
+      max-width: none;
+      margin-inline: calc(50% - 50vw);
+      padding-inline: calc(50vw - 50%);
+      padding-bottom: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #9836a5 #ece6f5;
+    }
+    .tpda-reviews .review-card {
+      scroll-snap-align: center;
     }
   }
 </style>
@@ -113,7 +135,7 @@
         <svg aria-hidden="true"><use href="#tpda-star"/></svg>
         <svg aria-hidden="true"><use href="#tpda-star"/></svg>
       </div>
-      <p class="review-card__text">TPDA is more than what we thought it would be. Great group of people. Professional, yet also very family orientated.</p>
+      <p class="review-card__text">Great studio — we are going on 4 years! They are attentive and really care to see children progress. My kids enjoy and love their classes.</p>
       <p class="review-card__author">Maria</p>
     </li>
 
